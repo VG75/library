@@ -18,7 +18,10 @@
             <input type="text" name="author" id="author" required>
             <label for="no-pages">No of pages: </label>
             <input type="number" id="no-pages">
-            <button value="cancel" formmethod="dialog">Add book</button>
+            <label for="read-status">Read?</label>
+            <input type="checkbox" id="read-status">
+
+            <button type="submit" value="default" id="close-dialog">Add book</button>
         </form>
     </dialog>
     
@@ -28,73 +31,95 @@
     <div class="library-container">
         <h1>Library</h1>
         <div class="book-shelf">
-            <div class="book-card">
-                <div class="title-text">
-                    <h3 class="book-name">Harry Potter</h3>
-                    <p class="author-name">JK rowling</p>
-                </div>
-                <div class="book-prop">
-                    <p class="pages">pages: 255</p>
-                    <div>
-                        <label for="read">Read</label>
-                        <input type="checkbox" id="read">
+            <div class="book-card" data-index = "0">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-circle" viewBox="0 0 16 16">
+                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                    <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"/>
+                </svg>
+                <div class="book-card-flex">
+                    <div class="title-text">
+                        <h3 class="book-name">Harry Potter and the Philosopher's Stone</h3>
+                        <p class="author-name">By JK rowling</p>
                     </div>
-                    <div>
-                        <label for="not-read">Not Read</label>
-                        <input type="checkbox" id="not-read">
-                    </div>
-
-                    
-                </div>
-            </div>
-            <div class="book-card">
-                <div class="title-text">
-                    <h3 class="book-name">Harry Potter</h3>
-                    <p class="author-name">JK rowling</p>
-                </div>
-                <div class="book-prop">
-                    <p class="pages">pages: 255</p>
-                    <div>
-                        <label for="read">Read</label>
-                        <input type="checkbox" id="read">
-                    </div>
-                    <div>
-                        <label for="not-read">Not Read</label>
-                        <input type="checkbox" id="not-read">
+                    <div class="book-prop">
+                        <p class="pages">pages: 255</p>
+                        <div>
+                            <label for="read">Read</label>
+                            <input type="checkbox" id="read">
+                        </div>
+                        <div>
+                            <label for="not-read">Not Read</label>
+                            <input type="checkbox" id="not-read" checked>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="book-card">
-                <div class="title-text">
-                    <h3 class="book-name">Harry Potter</h3>
-                    <p class="author-name">JK rowling</p>
-                </div>
-                <div class="book-prop">
-                    <p class="pages">pages: 255</p>
-                    <div>
-                        <label for="read">Read</label>
-                        <input type="checkbox" id="read">
+            <div class="book-card" data-index="1">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-circle" viewBox="0 0 16 16">
+                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                    <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"/>
+                </svg>
+                <div class="book-card-flex">
+                    <div class="title-text">
+                        <h3 class="book-name">Harry Potter and the Philosopher's Stone</h3>
+                        <p class="author-name">By JK rowling</p>
                     </div>
-                    <div>
-                        <label for="not-read">Not Read</label>
-                        <input type="checkbox" id="not-read">
+                    <div class="book-prop">
+                        <p class="pages">pages: 255</p>
+                        <div>
+                            <label for="read">Read</label>
+                            <input type="checkbox" id="read">
+                        </div>
+                        <div>
+                            <label for="not-read">Not Read</label>
+                            <input type="checkbox" id="not-read" checked>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="book-card">
-                <div class="title-text">
-                    <h3 class="book-name">Harry Potter</h3>
-                    <p class="author-name">JK rowling</p>
-                </div>
-                <div class="book-prop">
-                    <p class="pages">pages: 255</p>
-                    <div>
-                        <label for="read">Read</label>
-                        <input type="checkbox" id="read">
+            <div class="book-card" data-index="2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-circle" viewBox="0 0 16 16">
+                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                    <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"/>
+                </svg>
+                <div class="book-card-flex">
+                    <div class="title-text">
+                        <h3 class="book-name">Harry Potter and the Philosopher's Stone</h3>
+                        <p class="author-name">By JK rowling</p>
                     </div>
-                    <div>
-                        <label for="not-read">Not Read</label>
-                        <input type="checkbox" id="not-read">
+                    <div class="book-prop">
+                        <p class="pages">pages: 255</p>
+                        <div>
+                            <label for="read">Read</label>
+                            <input type="checkbox" id="read">
+                        </div>
+                        <div>
+                            <label for="not-read">Not Read</label>
+                            <input type="checkbox" id="not-read" checked>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="book-card" data-index="3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-circle" viewBox="0 0 16 16">
+                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                    <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"/>
+                </svg>
+                <div class="book-card-flex">
+                    <div class="title-text">
+                        <h3 class="book-name">Harry Potter and the Philosopher's Stone</h3>
+                        <p class="author-name">By JK rowling</p>
+                    </div>
+                    <div class="book-prop">
+                        <p class="pages">pages: 255</p>
+                        <div>
+                            <label for="read">Read</label>
+                            <input type="checkbox" id="read">
+                        </div>
+                        <div>
+                            <label for="not-read">Not Read</label>
+                            <input type="checkbox" id="not-read" checked>
+                        </div>
                     </div>
                 </div>
             </div>
