@@ -1,0 +1,110 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.add-book-btn {
+    margin: 20px auto 20px auto;
+}
+
+button {
+    padding: 14px 14px;
+    margin: 8px 0;
+    font-size: larger;
+    cursor: pointer;
+    border-radius: 10px;
+    background-color: wheat;
+    border: 1px solid blanchedalmond;
+}
+
+button:hover {
+    background-color: blanchedalmond;
+}
+
+.library-container {
+    width: 65%;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 15px 0;
+}
+
+h1 {
+    font-size: 36px;
+    padding: 0;
+    text-align: center;
+}
+
+.book-shelf {
+    display: grid;
+    grid-auto-flow: row;
+    grid-auto-rows: minmax(100px, auto); /* play with this to change height of the children, 50% will fill half */
+    grid-template-columns: repeat(3, 1fr); /* do not set template columns and rows */
+    grid-template-rows: unset;
+    overflow: auto;
+    height: 60vh;
+    row-gap: 10px;
+    column-gap: 10px;
+}
+
+.book-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    border: 1px solid black;;
+    padding: 8px;
+    border-radius: 10px;
+}
+
+.book-card h3, p {
+    margin: 0;
+    padding: 5px;
+}
+
+.book-name {
+    font-size: 28px;
+    text-align: center;
+    margin-bottom: 3px;
+}
+.author-name {
+    text-align: center;
+    font-size: 18px;
+}
+
+.book-prop {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: larger;
+    color: gray;
+    font-weight: 600;
+}
+
+.add-book-form {
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    height: auto;
+}
+
+input {
+    padding: 10px;
+    margin-top: 4px;
+}
+
+dialog {
+    
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+::backdrop {
+    background-color: rgba(255, 255, 255, 0.8);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
