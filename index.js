@@ -9,7 +9,11 @@ const deleteBook = document.querySelectorAll(".bi-x-circle");
 const newTitle = document.querySelector("#titel"); // You had a typo: "titel" instead of "title"
 const newAuthor = document.querySelector("#author");
 const newPage = document.querySelector("#no-pages"); 
-const readStatus = document.querySelectorAll("#read-status")
+const readStatus = document.querySelector("#read-status");
+const read = document.querySelectorAll("#read");
+
+
+
 let library = [
     {title: "Harry Potter 1", author: "JK Rowling", pages: 297, read: false},
     {title: "Harry Potter 2", author: "JK Rowling", pages: 296, read: false},
@@ -31,8 +35,9 @@ closeDialogBtn.addEventListener("click", (event) => {
         return;
     }
     event.preventDefault(); 
-    let newBook = new Book(newTitle.value, newAuthor.value, newPage.value, readStatus.checked);
+    let newBook = new Book(newTitle.value, newAuthor.value, parseFloat(newPage.value), readStatus.checked);
     library.push(newBook);
+    console.log(library);
     
    dialog.close(); 
 });
@@ -59,7 +64,7 @@ function addBooksToShelf() {
 
     for (let i = 0; i < library.length; i++) {
         let book = library[i];
-        const curBook = `<div class="book-card" data-index=${i}>
+        const curBook = `
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-circle" viewBox="0 0 16 16">
                     <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
                     <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"/>
@@ -77,17 +82,30 @@ function addBooksToShelf() {
                         </div>
                     </div>
                 </div>
-            </div>`;
-
+            `;
+        
         const tempDiv = document.createElement("div");
+        tempDiv.setAttribute("class", "book-card");
+        tempDiv.dataset.index = i;
         tempDiv.innerHTML = curBook;
+
+        // Use the dynamic ID to select the checkbox:
+        const readCheckbox = tempDiv.querySelector(`#read-${i}`);
+        if (readCheckbox) {
+            readCheckbox.addEventListener("change", () => {
+                book.read = readCheckbox.checked;
+            });
+        }
+
+        // Add event listener for deletion using the SVG as the delete button
+        // (Assuming the SVG is the first element inside tempDiv)
         tempDiv.firstElementChild.addEventListener("click", (e) => {
             let index = parseInt(e.target.closest(".book-card").dataset.index, 10);
             library.splice(index, 1);
             addBooksToShelf();
         });
-        bookShelf.appendChild(tempDiv);
 
+        bookShelf.appendChild(tempDiv);
     }
 }
 
